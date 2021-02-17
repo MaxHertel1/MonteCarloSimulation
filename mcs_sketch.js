@@ -3,12 +3,15 @@ let p_in = 0;
 let p_out = 0;
 let step = 0;
 let amount_Samples = 10000;
+let txtOutput;
 
 function setup() {
   createCanvas(resolution, resolution);
   frameRate(100);
   background(0);
   circle(resolution / 2, resolution / 2, resolution)
+  txtOutput = createElement("h2", "");
+  
   noStroke()
   //noLoop();
 }
@@ -39,5 +42,6 @@ function draw() {
     step++
   }
   
-  console.log(step + ": " + 4 * p_in / step)
+  txtOutput.html(4 * p_in / step);
+  //console.log(step + ": " + 4 * p_in / step)
 }
